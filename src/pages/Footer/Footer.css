@@ -1,0 +1,94 @@
+.background-footer {
+  background-color: #1a1a1a; /* true black */
+  background-image:
+    linear-gradient(rgba(255,255,255,0.02) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,0.02) 1px, transparent 1px);
+  background-size: 4px 4px;
+  color: var(--thread-color); /* cream thread text */
+  scroll-behavior: smooth;
+}
+
+/* Match global background */
+.footer {
+  color: var(--thread-color); /* cream thread text */
+  position: relative;
+}
+
+/* Social icons styling */
+.social-icons .social-link {
+  color: var(--thread-color); /* cream thread */
+  font-size: 1.5rem;
+  transition: 0.3s;
+  text-shadow:
+    1px 1px 0 #d9d9d9,
+    2px 2px 0 #bfbfbf,
+    3px 3px 4px rgba(0,0,0,0.8);
+}
+
+.social-icons .social-link:hover {
+  color: var(--accent-red); /* deep red hover accent */
+  text-shadow: 0 0 6px rgba(178,34,34,0.6);
+}
+
+/* Cream embroidered footer text */
+.footer-text {
+  font-weight: 700;
+  letter-spacing: 2px;
+  margin-top: 10px;
+  font-size: 1rem;
+
+  background: repeating-linear-gradient(
+    45deg,
+    var(--thread-color),
+    var(--thread-color) 2px,
+    #e6e6e6 2px,
+    #e6e6e6 4px
+  );
+  -webkit-background-clip: text;
+
+  text-shadow:
+    1px 1px 0 #d9d9d9,
+    2px 2px 0 #bfbfbf,
+    3px 3px 4px rgba(0,0,0,0.8);
+
+  animation: stitchMove 2s linear infinite;
+}
+
+/* Stitch movement animation */
+@keyframes stitchMove {
+  0% { background-position: 0 0; }
+  100% { background-position: 20px 20px; }
+}
+
+.stitch-footer {
+  background: #1a1a1a;
+
+  /* Fabric weave texture */
+  background-image:
+    linear-gradient(rgba(255,255,255,0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px);
+
+  background-size: 5px 5px;
+
+  border-bottom: 1px solid rgba(255,255,255,0.05);
+  position: relative;
+}
+
+.stitch-footer::before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 3px;
+
+  background: repeating-linear-gradient(
+    to left,
+    #d2c5a3,
+    #d2c5a3 8px,
+    transparent 8px,
+    transparent 18px
+  );
+
+  animation: horizontalStitch 3s linear infinite;
+}

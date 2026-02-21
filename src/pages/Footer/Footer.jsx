@@ -1,20 +1,30 @@
-import { faFacebookF, faGithub, faKaggle, faLinkedin, faLinkedinIn } from '@fortawesome/free-brands-svg-icons';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faFacebookF, faLinkedinIn } from '@fortawesome/free-brands-svg-icons';
+import './Footer.css';
 
 const Footer = () => {
     return (
-        <div className='text-center border-top border-secondary p-5'>
-            <div style={{ color: 'slateblue' }} className='d-flex justify-content-center pb-5 px-5'>
-                <div className='px-5'>
-                    <Link to={'https://www.facebook.com/MAZEaktiv'}><FontAwesomeIcon icon={faFacebookF} /></Link>
+        <div className='footer text-center border-secondary p-5 background-footer'>
+            {/* Social Icons */}
+            <div className='social-icons d-flex justify-content-center pb-5 px-5'>
+                <div className='px-4'>
+                    <a href='https://www.facebook.com/MAZEaktiv' target="_blank" rel="noreferrer" className='social-link'>
+                        <FontAwesomeIcon icon={faFacebookF} />
+                    </a>
                 </div>
-                <div className='px-5'> 
-                    <Link to={'https://www.linkedin.com/in/MAZEaktiv/'}><FontAwesomeIcon icon={faLinkedinIn} /></Link>
+                <div className='px-4'>
+                    <a href='https://www.linkedin.com/in/MAZEaktiv/' target="_blank" rel="noreferrer" className='social-link'>
+                        <FontAwesomeIcon icon={faLinkedinIn} />
+                    </a>
                 </div>
             </div>
-            <div style={{ color: 'khaki' }}>Copyright @ 2023 estiaq</div>
+
+            {/* Copyright */}
+            <div className='footer-text embroidered-text'>
+                Copyright © 2023 Maze Sourcing BD
+            </div>
         </div>
     );
 };

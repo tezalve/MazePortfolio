@@ -13,7 +13,7 @@ const Home = () => {
     const { home, about, portfolio, service, contact } = useContext(refContext);
 
     return (
-        <div className='background'>
+        <div className='background stitch-footer'>
             
             {/* Banner Section */}
             <div ref={home} className='py-5'>
