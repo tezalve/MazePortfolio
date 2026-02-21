@@ -1,0 +1,42 @@
+/* Background for the entire site */
+.background {
+  background-color: #000; /* true black */
+  background-image:
+    linear-gradient(rgba(255,255,255,0.02) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,0.02) 1px, transparent 1px);
+  background-size: 4px 4px;
+  color: var(--thread-color); /* cream thread text */
+  scroll-behavior: smooth;
+}
+
+/* Embroidered headings for sections */
+.embroidered-heading h2 {
+  font-weight: 700;
+  font-size: 3rem; /* adjust for responsiveness if needed */
+  letter-spacing: 3px;
+  color: var(--thread-color);
+  display: inline-block;
+
+  /* Diagonal thread texture */
+  background: repeating-linear-gradient(
+    45deg,
+    var(--thread-color),
+    var(--thread-color) 2px,
+    #e6e6e6 2px,
+    #e6e6e6 4px
+  );
+  -webkit-background-clip: text;
+
+  text-shadow:
+    1px 1px 0 #d9d9d9,
+    2px 2px 0 #bfbfbf,
+    3px 3px 4px rgba(0,0,0,0.8);
+
+  animation: stitchMove 2s linear infinite;
+}
+
+/* Subtle thread movement animation */
+@keyframes stitchMove {
+  0% { background-position: 0 0; }
+  100% { background-position: 20px 20px; }
+}

@@ -4,6 +4,7 @@ import Navbar from '../pages/Navbar/Navbar';
 import Sidebar from '../pages/Sidebar/Sidebar';
 import Footer from '../pages/Footer/Footer';
 import { ToastContainer } from 'react-toastify';
+import './Main.css';
 
 export const refContext = createContext();
 
@@ -23,13 +24,13 @@ const Main = () => {
     const value = {home, about, portfolio, contact, service};
 
     return (
-        <div className='row bg-dark g-0'>
+        <div>
             <ToastContainer />
-            <div className='col-1'>
+            <div>
                 <Sidebar></Sidebar>
             </div>
             <refContext.Provider value={value}>
-                <div className='col-11 border-start border-secondary'>
+                <div>
                     <Navbar></Navbar>
                     <Outlet></Outlet>
                     <Footer></Footer>

@@ -1,0 +1,100 @@
+/* Main sidebar fabric */
+.stitch-sidebar {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 90px;
+  height: 100vh;
+  background: #1a1a1a;
+
+  /* Woven texture */
+  background-image:
+    linear-gradient(rgba(255,255,255,0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px);
+  background-size: 5px 5px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 999;
+  overflow: hidden;
+}
+
+/* Vertical stitch line */
+.stitch-line {
+  width: 3px;
+  height: 100%;
+
+  background: repeating-linear-gradient(
+    to bottom,
+    var(--thread-color),
+    var(--thread-color) 6px,
+    transparent 6px,
+    transparent 14px
+  );
+
+  animation: stitchMove 3s linear infinite;
+}
+
+@keyframes stitchMove {
+  from {
+    background-position-y: 0;
+  }
+  to {
+    background-position-y: 20px;
+  }
+}
+
+/* Needle */
+.needle {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 16px;
+  height: 40px;
+  background: linear-gradient(to bottom, #aaa, #555);
+  border-radius: 50% 50% 20% 20%;
+  box-shadow: 0 0 8px rgba(255,255,255,0.2);
+  transition: top 0.1s ease-out;
+  z-index: 5;
+}
+
+/* Thread Navigation */
+.thread-nav {
+  position: absolute;
+  bottom: 50px;
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+}
+
+.thread-nav a {
+  writing-mode: vertical-rl;
+  transform: rotate(180deg);
+  text-decoration: none;
+  color: #c2b280;
+  font-size: 12px;
+  letter-spacing: 2px;
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+/* Thread effect on hover */
+.thread-nav a::before {
+  content: "";
+  position: absolute;
+  left: -8px;
+  width: 2px;
+  height: 100%;
+  background: #c2b280;
+  opacity: 0;
+  transition: 0.3s;
+}
+
+.thread-nav a:hover {
+  color: white;
+}
+
+.thread-nav a:hover::before {
+  opacity: 1;
+}

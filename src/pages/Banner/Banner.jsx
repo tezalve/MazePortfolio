@@ -30,19 +30,15 @@ const Banner = () => {
 
     return (
         <div className='text-center'>
-            <div className={ window.innerWidth < 768? 'display-5' : 'display-1'}>
+            <div className={window.innerWidth < 768 ? 'display-5' : 'display-1'}>
                 {' {" '}
                 <TypeAnimation
-                    sequence={[
-                        '_knitwear',
-                        '_woven',
-                        '_kids'
-                    ]}
+                    sequence={['_knitwear', '_woven', '_kids']}
                     wrapper="span"
-                    cursor={false}
-                    repeat={100}
+                    cursor={true}
+                    repeat={Infinity}
                     speed={500}
-                    style={{ display: 'inline-block', color: "khaki" }}
+                    className="embroidered-text"
                 />
                 {' "} '}
             </div>

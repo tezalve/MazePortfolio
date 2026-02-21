@@ -1,0 +1,21 @@
+:root {
+  --thread-color: #F7EAD5;
+  --accent-red: #B22222;
+}
+
+.section {
+  padding: 120px 100px;
+  margin-left: 90px;
+  border-bottom: 1px solid rgba(255,255,255,0.05);
+}
+
+.btn-primary-custom {
+  background-color: #B22222;
+  border: none;
+  color: white;
+  transition: 0.3s ease;
+}
+
+.btn-primary-custom:hover {
+  background-color: #B22222;
+}

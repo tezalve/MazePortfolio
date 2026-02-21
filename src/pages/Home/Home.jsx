@@ -5,41 +5,53 @@ import Portfolio from '../Portfolio/Portfolio';
 import Service from '../Service/Service';
 import { refContext } from '../../layouts/Main';
 import Contact from '../Contact/Contact';
+import './Home.css'
 
 
 const Home = () => {
 
-    const {home, about, portfolio, service, contact} = useContext(refContext);
+    const { home, about, portfolio, service, contact } = useContext(refContext);
 
     return (
-        <div className='text-white'>
+        <div className='background'>
+            
+            {/* Banner Section */}
             <div ref={home} className='py-5'>
-                <Banner></Banner>
+                <Banner />
             </div>
-            <div ref={about} className='text-center pt-5' style={{ color: "slateblue" }}>
+
+            {/* About Section */}
+            <div ref={about} className='text-center pt-5 embroidered-heading'>
                 <h2>{" {/} "}</h2>
             </div>
             <div className='pb-5'>
-                <About></About>
+                <About />
             </div>
-            <div ref={portfolio} className='text-center pt-5' style={{ color: "slateblue" }}>
+
+            {/* Portfolio Section */}
+            <div ref={portfolio} className='text-center pt-5 embroidered-heading'>
                 <h2>{" (!) "}</h2>
             </div>
             <div className='pb-5'>
-                <Portfolio></Portfolio>
+                <Portfolio />
             </div>
-            <div ref={service} className='text-center pt-5' style={{ color: "slateblue" }}>
+
+            {/* Services Section */}
+            <div ref={service} className='text-center pt-5 embroidered-heading'>
                 <h2>{" {#} "}</h2>
             </div>
             <div className='pb-5'>
-                <Service></Service>
+                <Service />
             </div>
-            <div ref={contact} className='text-center pt-5' style={{ color: "slateblue" }}>
+
+            {/* Contact Section */}
+            <div ref={contact} className='text-center pt-5 embroidered-heading'>
                 <h2>{" {*} "}</h2>
             </div>
             <div className='pb-5'>
-                <Contact></Contact>
+                <Contact />
             </div>
+
         </div>
     );
 };

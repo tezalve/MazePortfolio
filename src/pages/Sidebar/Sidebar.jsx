@@ -1,24 +1,34 @@
-import React from 'react';
+import React, { useEffect, useState } from "react";
+import "./Sidebar.css";
 
 const Sidebar = () => {
+  const [scrollPercent, setScrollPercent] = useState(0);
 
-    const lines = []
-    for (let i = 1; i <= 77; i++) {
-        lines.push(i);
-    }
+  useEffect(() => {
+    const handleScroll = () => {
+      const scrollTop = window.scrollY;
+      const docHeight =
+        document.documentElement.scrollHeight -
+        document.documentElement.clientHeight;
 
-    return (
-        <div className='text-center text-secondary sticky-top'>
-            {
-                lines.map(line => <div
-                    key={line}
-                    >
-                        {line}
-                    </div>
-                )
-            }
-        </div>
-    );
+      const percent = (scrollTop / docHeight) * 100;
+      setScrollPercent(percent);
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
+  return (
+    <div className="stitch-sidebar">
+      <div
+        className="needle"
+        style={{ top: `${scrollPercent}%` }}
+      ></div>
+
+      <div className="stitch-line"></div>
+    </div>
+  );
 };
 
 export default Sidebar;

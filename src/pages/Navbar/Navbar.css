@@ -5,3 +5,137 @@
   width: 100%;
   z-index: 9999;
 }
+
+.stitch-navbar {
+  background: #1a1a1a;
+
+  /* Fabric weave texture */
+  background-image:
+    linear-gradient(rgba(255,255,255,0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px);
+
+  background-size: 5px 5px;
+
+  border-bottom: 1px solid rgba(255,255,255,0.05);
+  position: relative;
+}
+
+.stitch-navbar::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 3px;
+
+  background: repeating-linear-gradient(
+    to right,
+    #d2c5a3,
+    #d2c5a3 8px,
+    transparent 8px,
+    transparent 18px
+  );
+
+  animation: horizontalStitch 3s linear infinite;
+}
+
+@keyframes horizontalStitch {
+  from {
+    background-position-x: 0;
+  }
+  to {
+    background-position-x: 26px;
+  }
+}
+
+.navbar .nav-link,
+.navbar .navbar-nav a {
+  color: var(--thread-color) !important;
+  letter-spacing: 2px;
+  position: relative;
+  transition: 0.3s ease;
+}
+
+.navbar .navbar-nav a:hover {
+  color: var(--accent-red) !important;
+}
+
+#home {
+  font-weight: 600;
+  letter-spacing: 3px;
+  font-size: 14px;
+  text-transform: uppercase;
+  margin: 0;
+}
+
+#home span {
+  color: #d2c5a3 !important;
+  font-size: 11px;
+  letter-spacing: 2px;
+}
+
+.stitch-navbar {
+  backdrop-filter: blur(6px);
+  background-color: rgba(20, 20, 20, 0.95);
+}
+
+.embroidery-text {
+  font-weight: 700;
+  letter-spacing: 3px;
+  background: repeating-linear-gradient(
+    45deg,
+    #d2c5a3,
+    #d2c5a3 2px,
+    #c2b280 2px,
+    #c2b280 4px
+  );
+
+  -webkit-background-clip: text;
+
+  text-shadow:
+    1px 1px 0 var(--thread-color),
+    2px 2px 4px rgba(0,0,0,0.6);
+}
+
+.logo-embroidered {
+  font-weight: 700;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+
+  color: var(--thread-color);
+}
+
+.logo-embroidered.texture {
+  background: repeating-linear-gradient(
+    45deg,
+    #ffffff,
+    #ffffff 2px,
+    #f2f2f2 2px,
+    #f2f2f2 4px
+  );
+  -webkit-background-clip: text;
+}
+
+/* Red thread underline */
+.navbar .navbar-nav a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -6px;
+  width: 0%;
+  height: 2px;
+
+  background: repeating-linear-gradient(
+    to right,
+    var(--accent-red),
+    var(--accent-red) 6px,
+    transparent 6px,
+    transparent 12px
+  );
+
+  transition: width 0.3s ease;
+}
+
+.navbar .navbar-nav a:hover::after {
+  width: 100%;
+}

@@ -39,14 +39,11 @@ const Navbar = () => {
 
     return (
         <div className='navbar-fixed'>
-            <nav className="navbar navbar-expand-md bg-dark">
-                <div className='d-flex flex-row text-white px-1'>
-                    <div>
-                        //
-                    </div>
+            <nav className="navbar navbar-expand-md stitch-navbar">
+                <div className='d-flex flex-row px-1'>
                     <div className='px-2'>
-                        <p id='home' className='text-decoration-none text-white'>
-                            MAZEsourcing <span style={{ color: "slateblue" }}><br></br>sourcing house</span>
+                        <p id='home' className='logo-embroidered'>
+                            MAZE<span className=''>sourcing</span>
                         </p>
                     </div>
                 </div>
@@ -54,35 +51,35 @@ const Navbar = () => {
                     <span className="navbar-toggler-icon"></span>
                 </button>
                 <div className="collapse navbar-collapse justify-content-end" id="navbarNavDropdown">
-                    <ul className="navbar-nav align-items-center d-flex justify-content-between">
+                    <ul className="navbar-nav align-items-center d-flex justify-content-between embroidery-text">
                         <li className="nav-item px-3">
-                            <NavLink id='home' onClick={handleclickhome} className='text-decoration-none' style={{ color: "khaki" }}>
-                                _home
+                            <NavLink id='home' onClick={handleclickhome} className='text-decoration-none'>
+                                home
                             </NavLink>
                         </li>
                         <li className="nav-item px-3">
-                            <NavLink id='about' onClick={handleclickabout} className='text-decoration-none' style={{ color: "khaki" }}>
-                                _about
+                            <NavLink id='about' onClick={handleclickabout} className='text-decoration-none'>
+                                about
                             </NavLink>
                         </li>
                         <li className="nav-item px-3">
-                            <NavLink id='portfolio' onClick={handleclickportfolio} className='text-decoration-none' style={{ color: "khaki" }}>
-                                _portfolio
+                            <NavLink id='portfolio' onClick={handleclickportfolio} className='text-decoration-none'>
+                                portfolio
                             </NavLink>
                         </li>
                         <li className="nav-item px-3">
-                            <NavLink id='services' onClick={handleclickservice} className='text-decoration-none' style={{ color: "khaki" }}>
-                                _services
+                            <NavLink id='services' onClick={handleclickservice} className='text-decoration-none'>
+                                services
                             </NavLink>
                         </li>
                         <li className="nav-item px-3">
-                            <NavLink id='contact' onClick={handleclickcontact} className='text-decoration-none' style={{ color: "khaki" }}>
-                                _contact
+                            <NavLink id='contact' onClick={handleclickcontact} className='text-decoration-none'>
+                                contact
                             </NavLink>
                         </li>
                         <li className="nav-item px-3">
-                            <NavLink onClick={download} id='resume' className='text-decoration-none' style={{ color: "slateblue" }}>
-                                _brochure
+                            <NavLink onClick={download} id='resume' className='text-decoration-none'>
+                                brochure
                             </NavLink>
                         </li>
                     </ul>
